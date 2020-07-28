@@ -2,13 +2,9 @@ qrcode = window.qrcode;
 const video = document.createElement("video");
 const canvasElement = document.getElementById("qr-canvas");
 const canvas = canvasElement.getContext("2d");
-const qrResult = document.getElementById("qr-result");
-const outputData = document.getElementById("outputData");
-const btnScanQR = document.getElementById("btn-scan-qr");
 var data;
 var data2;
 let scanning = false;
-btnScanQR.hidden=true;
 
  qrcode.callback = res => {
   if (res) {
@@ -39,8 +35,6 @@ window.onload = function() {
     .getUserMedia({ video: { facingMode: "environment" } })
     .then(function(stream) {
       scanning = true;
-      qrResult.hidden = true;
-      btnScanQR.hidden = true;
       canvasElement.hidden = false;
       video.setAttribute("playsinline", true); 
       video.srcObject = stream;
