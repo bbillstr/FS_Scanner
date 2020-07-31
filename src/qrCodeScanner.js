@@ -58,12 +58,12 @@ function scan() {
 }
 
 var id;
-$('#field96002865').keyup(function() {
- id=$('#field96002865').val();
+$('#field96347095').keyup(function() {
+ id=$('#field96347095').val();
  console.log(id);
 });
 
-$('#field96002865').blur(function() {
+$('#field96347095').blur(function() {
 var settings = {
   "url": "https://cors-anywhere.herokuapp.com/https://www.formstack.com/api/v2//submission/"+id+".json",
   "method": "GET",
