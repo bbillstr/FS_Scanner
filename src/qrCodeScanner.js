@@ -12,8 +12,9 @@ let scanning = false;
   if (res) {
     data = res;
     console.log("Data1  "+data);
+    scanning = true; 
     sendTestId();
-    scanning = true;  
+    isNull();
     setTimeout(autoRefresh, 1000)
      }
     };
@@ -30,7 +31,7 @@ function sendTestId () {
 function isNull () {
   var checkNull = $('#field96347098').val(); 
     if (checkNull !== "") {
-      document.getElementById('fsSubmitButton3979484').click();
+      document.getElementById('fsSubmitButton3989520').click();
   }
  };
 
