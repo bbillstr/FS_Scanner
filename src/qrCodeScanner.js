@@ -14,6 +14,7 @@ let scanning = false;
     console.log("Data1  "+data);
     sendTestId();
     scanning = true;  
+    $('#field96347098').val(data);
     setTimeout(autoRefresh, 1000)
      }
     };
@@ -23,17 +24,6 @@ function autoRefresh () {
   location.reload();
 }
 
-//Send Submission ID to iFrame
-function sendSubmissionId () {
-  var destination1 = document.getElementById("iframe").contentWindow;
-    destination1.postMessage(data,'*');
-}
-
-//Send Test ID to iFrame
-function sendTestId () {
-  var destination2 = document.getElementById("iframe").contentWindow;
-    destination2.postMessage(data,'*');
-}
 
 // Camera Canvas Init
 window.onload = function() {
@@ -66,3 +56,40 @@ function scan() {
     setTimeout(scan, 300);
   }
 }
+
+var id;
+$('#field96002865').keyup(function() {
+ id=$('#field96002865').val();
+ console.log(id);
+});
+
+$('#field96002865').blur(function() {
+var settings = {
+  "url": "https://cors-anywhere.herokuapp.com/https://www.formstack.com/api/v2//submission/"+id+".json",
+  "method": "GET",
+  "timeout": 0,
+  "headers": {
+    "Authorization": "Bearer 12cdf45b77d76ccf45ffe8a087a8b031"
+  },
+};
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+
+  var fname = (response.data[0].value);
+  fname = fname.split("first = ").pop();
+  fname = fname.split("last").shift();
+  console.log(fname);
+
+  var lname = (response.data[0].value);
+  lname = lname.split("last = ").pop();
+  console.log(lname);
+  $('#field96347096').val(fname + " " + lname);
+
+  var email = (response.data[1].value)
+  console.log(email);
+  $('#field96347097').val(email);
+
+
+});
+});
