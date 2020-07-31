@@ -12,7 +12,9 @@ let scanning = false;
   if (res) {
     data = res;
     console.log("Data1  "+data);
-    scanning = true; 
+    sendId();
+    scanning = true;
+    data = res;
     sendTestId();
     isNull();
     setTimeout(autoRefresh, 1000)
@@ -22,6 +24,14 @@ let scanning = false;
 //Refresh page after form submit
 function autoRefresh () {
   window.reload();
+}
+
+
+function sendId (callback) {
+  $('#field96347095').val(data);
+  setTimeout(function() {
+    callback();
+  }, 3000);
 }
 
 function sendTestId () {
