@@ -26,6 +26,14 @@ function autoRefresh () {
 function sendTestId () {
   $('#field96347098').val(data);
 }
+
+function isNull () {
+  var checkNull = $('#field96347098').val(); 
+    if (checkNull !== "") {
+      document.getElementById('fsSubmitButton3979484').click();
+  }
+ };
+
 // Camera Canvas Init
 window.onload = function() {
   navigator.mediaDevices
