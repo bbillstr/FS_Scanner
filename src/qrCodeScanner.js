@@ -14,7 +14,6 @@ let scanning = false;
     console.log("Data1  "+data);
     sendTestId();
     scanning = true;  
-    $('#field96347098').val(data);
     setTimeout(autoRefresh, 1000)
      }
     };
@@ -24,7 +23,9 @@ function autoRefresh () {
   location.reload();
 }
 
-
+function sendTestId () {
+  $('#field96347098').val(data);
+}
 // Camera Canvas Init
 window.onload = function() {
   navigator.mediaDevices
