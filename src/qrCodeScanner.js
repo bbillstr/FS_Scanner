@@ -12,7 +12,7 @@ let scanning = false;
   if (res) {
     data = res;
     console.log("Data1  "+data);
-    sendId();
+    sendId(callback);
     scanning = true;
     data = res;
     sendTestId();
