@@ -21,7 +21,7 @@ let scanning = false;
 
 //Refresh page after form submit
 function autoRefresh () {
-  location.reload();
+  window.reload();
 }
 
 function sendTestId () {
