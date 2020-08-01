@@ -27,10 +27,10 @@ function autoRefresh () {
 }
 
 
-function sendId (_callback) {
+function sendId () {
   $('#field96347095').val(data);
   setTimeout(function() {
-    _callback();
+    
   }, 3000);
 }
 
