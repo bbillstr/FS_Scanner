@@ -13,6 +13,7 @@ let scanning = false;
     data = res;
     console.log("Data1  "+data);
     await sendId(res);
+    scanning = true;
      }
     };
 
@@ -25,7 +26,6 @@ function autoRefresh () {
 async function sendId (res) {
   $('#field96347095').val(data);
   setTimeout(function() {
-    scanning = true;
     data2 = res;
     sendTestId();
     isNull();
@@ -34,7 +34,6 @@ async function sendId (res) {
 
 function sendTestId () {
   $('#field96347098').val(data2);
-  setTimeout(autoRefresh, 1000)
 }
 
 function isNull () {
