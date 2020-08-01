@@ -8,11 +8,11 @@ var data2;
 let scanning = false;
 
 //QR Response Data
- qrcode.callback = function (res) {
+ qrcode.callback =  async function (res) {
   if (res) {
     data = res;
     console.log("Data1  "+data);
-    sendId(callback);
+    await sendId();
     scanning = true;
     data = res;
     sendTestId();
@@ -27,10 +27,10 @@ function autoRefresh () {
 }
 
 
-function sendId (callback) {
+function sendId (_callback) {
   $('#field96347095').val(data);
   setTimeout(function() {
-    callback();
+    _callback();
   }, 3000);
 }
 
