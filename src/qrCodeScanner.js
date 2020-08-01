@@ -11,6 +11,7 @@ let scanning = false;
 //QR Response Data
  qrcode.callback =  function (res) {
     data = res;
+    id = data;
     console.log("Data1  "+data);
     sendId();
     scanning = true;
@@ -24,7 +25,6 @@ function autoRefresh () {
  
 function sendId () {
    $('#field96347095').val(data);
-   id=$('#field96347095').val();
    setTimeout(function() {
    sendTestId();
    console.log(id);
