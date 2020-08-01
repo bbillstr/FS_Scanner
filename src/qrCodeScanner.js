@@ -12,6 +12,7 @@ let scanning = false;
  qrcode.callback =  function (res) {
     data = res;
     id = data;
+    $('h1').html('Step 2: Please Scan Test Kit QR');
     getApi();
     console.log(id);
     console.log("Data1  "+data);
@@ -27,7 +28,6 @@ function autoRefresh () {
  
 function sendId () {
    $('#field96347095').val(data);
-   $('h1').html('Step 2: Please Scan Test Kit QR');
    setTimeout(function() {
    sendTestId();
   }, 3000);
