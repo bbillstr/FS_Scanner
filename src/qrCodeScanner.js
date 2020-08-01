@@ -29,6 +29,7 @@ async function sendId () {
 }
 
 function sendTestId () {
+  cameraStart();
   qrcode.callback =  async function (res) {
     data2 = res;
     console.log("Data2  "+data2);
