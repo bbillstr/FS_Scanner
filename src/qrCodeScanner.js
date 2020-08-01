@@ -20,11 +20,13 @@ function autoRefresh () {
   window.reload();
 }
 
-
+var id;
 function sendId () {
-  $('#field96347095').val(data);
-  setTimeout(function() {
-    sendTestId();
+   $('#field96347095').val(data);
+   setTimeout(function() {
+   sendTestId();
+   id=$('#field96347095').val();
+   console.log(id);
   }, 3000);
 }
 
@@ -80,8 +82,8 @@ function scan() {
   }
 }
 
-var id;
-$('#field96347095').change(function() {
+
+$('#field96347095').keyup(function() {
  id=$('#field96347095').val();
  console.log(id);
 });
