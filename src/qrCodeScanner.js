@@ -12,7 +12,7 @@ let scanning = false;
  qrcode.callback =  function (res) {
     data = res;
     id = data;
-    $('h1').html('Step 2: Please Scan Test Kit QR');
+    $('h1').html("Step 2: Please Scan Test Kit QR"); 
     getApi();
     console.log(id);
     console.log("Data1  "+data);
