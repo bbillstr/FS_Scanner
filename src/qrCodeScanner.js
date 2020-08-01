@@ -9,12 +9,10 @@ let scanning = false;
 
 //QR Response Data
  qrcode.callback =  async function (res) {
-  if (res) {
     data = res;
     console.log("Data1  "+data);
     await sendId(res);
     scanning = true;
-     }
     };
 
 //Refresh page after form submit
@@ -26,9 +24,14 @@ function autoRefresh () {
 async function sendId (res) {
   $('#field96347095').val(data);
   setTimeout(function() {
+    qrcode.callback =  async function (res) {
     data2 = res;
+    console.log("Data2  "+dat2);
+    scanning = true;
     sendTestId();
     isNull();
+    };
+    
   }, 3000);
 }
 
