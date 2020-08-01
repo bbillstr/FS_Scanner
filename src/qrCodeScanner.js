@@ -33,6 +33,7 @@ function sendId () {
 }
 
 function sendTestId () {
+  document.getElementById("steps").innerHTML = "Step 2: Scan Test Kit QR";
   tick();
   scan();
   qrcode.callback =  function (res) {
