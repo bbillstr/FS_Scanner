@@ -5,6 +5,7 @@ const canvasElement = document.getElementById("qr-canvas");
 const canvas = canvasElement.getContext("2d");
 var data;
 var data2;
+var id;
 let scanning = false;
 
 //QR Response Data
@@ -20,12 +21,12 @@ function autoRefresh () {
   window.reload();
 }
 
-var id;
+ 
 function sendId () {
    $('#field96347095').val(data);
+   id=$('#field96347095').val();
    setTimeout(function() {
    sendTestId();
-   id=$('#field96347095').val();
    console.log(id);
   }, 3000);
 }
@@ -83,10 +84,10 @@ function scan() {
 }
 
 
-// $('#field96347095').keyup(function() {
-//  id=$('#field96347095').val();
-//  console.log(id);
-// });
+$('#field96347095').keyup(function() {
+ id=$('#field96347095').val();
+ console.log(id);
+});
 
 $('#field96347095').change(function() {
 var settings = {
