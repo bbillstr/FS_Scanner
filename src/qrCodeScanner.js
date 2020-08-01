@@ -28,12 +28,12 @@ function autoRefresh () {
 function sendId () {
    $('#field96347095').val(data);
    setTimeout(function() {
+   document.getElementById("steps").innerHTML = "Step 2: Scan Test Kit QR";
    sendTestId();
   }, 3000);
 }
 
 function sendTestId () {
-  document.getElementById("steps").innerHTML = "Step 2: Scan Test Kit QR";
   tick();
   scan();
   qrcode.callback =  function (res) {
