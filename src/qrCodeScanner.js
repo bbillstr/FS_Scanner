@@ -11,7 +11,7 @@ let scanning = false;
  qrcode.callback =  async function (res) {
     data = res;
     console.log("Data1  "+data);
-    await sendId(res);
+    await sendId();
     scanning = true;
     };
 
@@ -21,22 +21,22 @@ function autoRefresh () {
 }
 
 
-async function sendId (res) {
+async function sendId () {
   $('#field96347095').val(data);
   setTimeout(function() {
-    qrcode.callback =  async function (res) {
-    data2 = res;
-    console.log("Data2  "+dat2);
-    scanning = true;
     sendTestId();
-    isNull();
-    };
-    
   }, 3000);
 }
 
 function sendTestId () {
-  $('#field96347098').val(data2);
+  qrcode.callback =  async function (res) {
+    data2 = res;
+    console.log("Data2  "+data2);
+    scanning = true;
+    $('#field96347098').val(data2);
+    isNull();
+    };
+ 
 }
 
 function isNull () {
