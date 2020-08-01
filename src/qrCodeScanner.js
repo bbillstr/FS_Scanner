@@ -12,6 +12,7 @@ let scanning = false;
  qrcode.callback =  function (res) {
     data = res;
     id = data;
+    console.log(id);
     console.log("Data1  "+data);
     sendId();
     scanning = true;
@@ -27,7 +28,6 @@ function sendId () {
    $('#field96347095').val(data);
    setTimeout(function() {
    sendTestId();
-   console.log(id);
   }, 3000);
 }
 
