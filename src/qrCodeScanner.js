@@ -83,10 +83,10 @@ function scan() {
 }
 
 
-$('#field96347095').keyup(function() {
- id=$('#field96347095').val();
- console.log(id);
-});
+// $('#field96347095').keyup(function() {
+//  id=$('#field96347095').val();
+//  console.log(id);
+// });
 
 $('#field96347095').change(function() {
 var settings = {
