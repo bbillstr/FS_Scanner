@@ -13,11 +13,6 @@ let scanning = false;
     data = res;
     console.log("Data1  "+data);
     await sendId();
-    scanning = true;
-    data2 = res;
-    sendTestId();
-    isNull();
-    setTimeout(autoRefresh, 1000)
      }
     };
 
@@ -30,12 +25,16 @@ function autoRefresh () {
 async function sendId () {
   $('#field96347095').val(data);
   setTimeout(function() {
-    cameraStart();
+    scanning = true;
+    data2 = res;
+    sendTestId();
+    isNull();
   }, 3000);
 }
 
 function sendTestId () {
   $('#field96347098').val(data2);
+  setTimeout(autoRefresh, 1000)
 }
 
 function isNull () {
