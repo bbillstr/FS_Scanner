@@ -30,7 +30,7 @@ async function sendId () {
 
 function sendTestId () {
   tick();
-  scan():
+  scan();
   qrcode.callback =  async function (res) {
     data2 = res;
     console.log("Data2  "+data2);
