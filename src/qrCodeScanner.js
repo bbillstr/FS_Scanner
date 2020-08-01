@@ -15,6 +15,7 @@ let scanning = false;
     getApi();
     console.log(id);
     console.log("Data1  "+data);
+    document.getElementById("steps").innerHTML = "Step 2: Scan Test Kit QR";
     sendId();
     scanning = true;
     };
@@ -28,7 +29,6 @@ function autoRefresh () {
 function sendId () {
    $('#field96347095').val(data);
    setTimeout(function() {
-   document.getElementById("steps").innerHTML = "Step 2: Scan Test Kit QR";
    sendTestId();
   }, 3000);
 }
