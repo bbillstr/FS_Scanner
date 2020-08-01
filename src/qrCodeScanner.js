@@ -8,7 +8,7 @@ var data2;
 let scanning = false;
 
 //QR Response Data
- qrcode.callback =  async function (res) {
+ qrcode.callback =  function (res) {
   if (res) {
     data = res;
     console.log("Data1  "+data);
@@ -30,7 +30,7 @@ function autoRefresh () {
 async function sendId () {
   $('#field96347095').val(data);
   setTimeout(function() {
-    
+    cameraStart();
   }, 3000);
 }
 
@@ -46,7 +46,7 @@ function isNull () {
  };
 
 // Camera Canvas Init
-window.onload = function() {
+window.onload = function cameraStart () {
   navigator.mediaDevices
     .getUserMedia({ video: { facingMode: "environment" } })
     .then(function(stream) {
