@@ -8,10 +8,10 @@ var data2;
 let scanning = false;
 
 //QR Response Data
- qrcode.callback =  async function (res) {
+ qrcode.callback =  function (res) {
     data = res;
     console.log("Data1  "+data);
-    await sendId();
+    sendId();
     scanning = true;
     };
 
@@ -21,7 +21,7 @@ function autoRefresh () {
 }
 
 
-async function sendId () {
+function sendId () {
   $('#field96347095').val(data);
   setTimeout(function() {
     sendTestId();
@@ -31,7 +31,7 @@ async function sendId () {
 function sendTestId () {
   tick();
   scan();
-  qrcode.callback =  async function (res) {
+  qrcode.callback =  function (res) {
     data2 = res;
     console.log("Data2  "+data2);
     scanning = true;
@@ -81,7 +81,7 @@ function scan() {
 }
 
 var id;
-$('#field96347095').keyup(function() {
+$('#field96347095').change(function() {
  id=$('#field96347095').val();
  console.log(id);
 });
