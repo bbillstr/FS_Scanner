@@ -15,7 +15,6 @@ let scanning = false;
     getApi();
     console.log(id);
     console.log("Data1  "+data);
-    document.getElementById("steps").innerHTML = "Step 2: Scan Test Kit QR";
     sendId();
     scanning = true;
     };
