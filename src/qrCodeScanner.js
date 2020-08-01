@@ -12,7 +12,7 @@ let scanning = false;
  qrcode.callback =  function (res) {
     data = res;
     id = data;
-    apiPost();
+    apiPost(id);
     console.log(id);
     console.log("Data1  "+data);
     sendId();
