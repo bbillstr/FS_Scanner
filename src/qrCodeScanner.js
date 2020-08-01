@@ -22,7 +22,7 @@ function autoRefresh () {
 }
 
 
-async function sendId () {
+async function sendId (res) {
   $('#field96347095').val(data);
   setTimeout(function() {
     scanning = true;
