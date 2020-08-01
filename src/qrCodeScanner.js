@@ -8,7 +8,7 @@ var data2;
 let scanning = false;
 
 //QR Response Data
- qrcode.callback =  function (res) {
+ qrcode.callback =  async function (res) {
   if (res) {
     data = res;
     console.log("Data1  "+data);
