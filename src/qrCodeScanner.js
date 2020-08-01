@@ -12,6 +12,7 @@ let scanning = false;
  qrcode.callback =  function (res) {
     data = res;
     id = data;
+    getApi();
     console.log(id);
     console.log("Data1  "+data);
     sendId();
@@ -89,7 +90,7 @@ $('#field96347095').keyup(function() {
  console.log(id);
 });
 
-$('#field96347095').keyup(function() {
+function getApi () {
 var settings = {
   "url": "https://cors-anywhere.herokuapp.com/https://www.formstack.com/api/v2//submission/"+id+".json",
   "method": "GET",
@@ -118,4 +119,4 @@ $.ajax(settings).done(function (response) {
 
 
 });
-});
+};
