@@ -89,7 +89,7 @@ $('#field96347095').keyup(function() {
  console.log(id);
 });
 
-$('#field96347095').change(function() {
+$('#field96347095').keyup(function() {
 var settings = {
   "url": "https://cors-anywhere.herokuapp.com/https://www.formstack.com/api/v2//submission/"+id+".json",
   "method": "GET",
